@@ -14,6 +14,18 @@
 		CE2247112919DF830087F563 /* bookSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2247102919DF830087F563 /* bookSearchTests.swift */; };
 		CE22471B2919DF840087F563 /* bookSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22471A2919DF840087F563 /* bookSearchUITests.swift */; };
 		CE22471D2919DF840087F563 /* bookSearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22471C2919DF840087F563 /* bookSearchUITestsLaunchTests.swift */; };
+		CE224755291A1D010087F563 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474A291A1D010087F563 /* URLParameterEncoder.swift */; };
+		CE224756291A1D010087F563 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474B291A1D010087F563 /* JSONParameterEncoder.swift */; };
+		CE224757291A1D010087F563 /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474C291A1D010087F563 /* AnyEncodable.swift */; };
+		CE224758291A1D010087F563 /* HTTPUrlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474E291A1D010087F563 /* HTTPUrlResponse.swift */; };
+		CE224759291A1D010087F563 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474F291A1D010087F563 /* NetworkError.swift */; };
+		CE22475A291A1D010087F563 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224751291A1D010087F563 /* NetworkRouter.swift */; };
+		CE22475B291A1D010087F563 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224752291A1D010087F563 /* HTTPTask.swift */; };
+		CE22475C291A1D010087F563 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224753291A1D010087F563 /* Router.swift */; };
+		CE22475D291A1D010087F563 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224754291A1D010087F563 /* EndPointType.swift */; };
+		CE224760291A1D4B0087F563 /* bookSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22475F291A1D4B0087F563 /* bookSearchService.swift */; };
+		CE224762291A1D740087F563 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224761291A1D740087F563 /* Constant.swift */; };
+		CE224764291A2CA30087F563 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224763291A2CA20087F563 /* BookModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +57,18 @@
 		CE2247162919DF840087F563 /* bookSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bookSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE22471A2919DF840087F563 /* bookSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookSearchUITests.swift; sourceTree = "<group>"; };
 		CE22471C2919DF840087F563 /* bookSearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookSearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE22474A291A1D010087F563 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		CE22474B291A1D010087F563 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		CE22474C291A1D010087F563 /* AnyEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
+		CE22474E291A1D010087F563 /* HTTPUrlResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPUrlResponse.swift; sourceTree = "<group>"; };
+		CE22474F291A1D010087F563 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		CE224751291A1D010087F563 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		CE224752291A1D010087F563 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		CE224753291A1D010087F563 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CE224754291A1D010087F563 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		CE22475F291A1D4B0087F563 /* bookSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookSearchService.swift; sourceTree = "<group>"; };
+		CE224761291A1D740087F563 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		CE224763291A2CA20087F563 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +174,7 @@
 		CE22472C2919F02E0087F563 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE224763291A2CA20087F563 /* BookModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,6 +182,7 @@
 		CE22472D2919F03A0087F563 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				CE224761291A1D740087F563 /* Constant.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -164,6 +190,10 @@
 		CE22472E2919F0410087F563 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CE22475E291A1D380087F563 /* Service */,
+				CE224749291A1D010087F563 /* Encoding */,
+				CE22474D291A1D010087F563 /* NetworkEnum */,
+				CE224750291A1D010087F563 /* Provider */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -183,6 +213,44 @@
 				CE2247042919DF830087F563 /* LaunchScreen.storyboard */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		CE224749291A1D010087F563 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				CE22474A291A1D010087F563 /* URLParameterEncoder.swift */,
+				CE22474B291A1D010087F563 /* JSONParameterEncoder.swift */,
+				CE22474C291A1D010087F563 /* AnyEncodable.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		CE22474D291A1D010087F563 /* NetworkEnum */ = {
+			isa = PBXGroup;
+			children = (
+				CE22474E291A1D010087F563 /* HTTPUrlResponse.swift */,
+				CE22474F291A1D010087F563 /* NetworkError.swift */,
+			);
+			path = NetworkEnum;
+			sourceTree = "<group>";
+		};
+		CE224750291A1D010087F563 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				CE224751291A1D010087F563 /* NetworkRouter.swift */,
+				CE224752291A1D010087F563 /* HTTPTask.swift */,
+				CE224753291A1D010087F563 /* Router.swift */,
+				CE224754291A1D010087F563 /* EndPointType.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		CE22475E291A1D380087F563 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CE22475F291A1D4B0087F563 /* bookSearchService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,8 +383,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE224758291A1D010087F563 /* HTTPUrlResponse.swift in Sources */,
+				CE22475A291A1D010087F563 /* NetworkRouter.swift in Sources */,
+				CE22475C291A1D010087F563 /* Router.swift in Sources */,
+				CE224759291A1D010087F563 /* NetworkError.swift in Sources */,
+				CE22475B291A1D010087F563 /* HTTPTask.swift in Sources */,
+				CE22475D291A1D010087F563 /* EndPointType.swift in Sources */,
+				CE224764291A2CA30087F563 /* BookModel.swift in Sources */,
+				CE224756291A1D010087F563 /* JSONParameterEncoder.swift in Sources */,
+				CE224757291A1D010087F563 /* AnyEncodable.swift in Sources */,
+				CE224760291A1D4B0087F563 /* bookSearchService.swift in Sources */,
+				CE224762291A1D740087F563 /* Constant.swift in Sources */,
 				CE2246FE2919DF830087F563 /* ViewController.swift in Sources */,
 				CE2246FA2919DF830087F563 /* AppDelegate.swift in Sources */,
+				CE224755291A1D010087F563 /* URLParameterEncoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
