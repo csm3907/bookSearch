@@ -95,10 +95,11 @@
 		CE2246F82919DF830087F563 /* bookSearch */ = {
 			isa = PBXGroup;
 			children = (
-				CE2246F92919DF830087F563 /* AppDelegate.swift */,
-				CE2246FD2919DF830087F563 /* ViewController.swift */,
-				CE2247022919DF830087F563 /* Assets.xcassets */,
-				CE2247042919DF830087F563 /* LaunchScreen.storyboard */,
+				CE2247302919F0830087F563 /* Settings */,
+				CE22472F2919F06F0087F563 /* Resources */,
+				CE22472E2919F0410087F563 /* Network */,
+				CE22472D2919F03A0087F563 /* Extension */,
+				CE2247292919F0130087F563 /* Book */,
 				CE2247072919DF830087F563 /* Info.plist */,
 			);
 			path = bookSearch;
@@ -119,6 +120,69 @@
 				CE22471C2919DF840087F563 /* bookSearchUITestsLaunchTests.swift */,
 			);
 			path = bookSearchUITests;
+			sourceTree = "<group>";
+		};
+		CE2247292919F0130087F563 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				CE22472C2919F02E0087F563 /* Model */,
+				CE22472B2919F0250087F563 /* ViewModel */,
+				CE22472A2919F01E0087F563 /* View */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		CE22472A2919F01E0087F563 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE2246FD2919DF830087F563 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE22472B2919F0250087F563 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE22472C2919F02E0087F563 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE22472D2919F03A0087F563 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CE22472E2919F0410087F563 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CE22472F2919F06F0087F563 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE2247022919DF830087F563 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE2247302919F0830087F563 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CE2246F92919DF830087F563 /* AppDelegate.swift */,
+				CE2247042919DF830087F563 /* LaunchScreen.storyboard */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
