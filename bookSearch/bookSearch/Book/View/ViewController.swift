@@ -9,11 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    lazy var spinner:UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .medium)
+        spinner.frame = CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: 70)
+        return spinner
+    }()
+    
     lazy var tbview: UITableView = {
         let tbview = UITableView()
         tbview.translatesAutoresizingMaskIntoConstraints = false
         tbview.keyboardDismissMode = .onDrag
-        tbview.tableFooterView = UIView()
+        tbview.tableFooterView = spinner
         tbview.register(SearchBookTableViewCell.self, forCellReuseIdentifier: SearchBookTableViewCell.identifier)
         tbview.frame = self.view.bounds
         //tbview.separatorStyle = .none
@@ -34,6 +40,9 @@ class ViewController: UIViewController {
         return searchBar
     }()
     
+    var searchString: String = ""
+    var isDataLoading: Bool = false
+    var pageNo:Int = 0
     var dataSources: [Book] = []
     let viewModel: BookServiceViewModelType = BookServiceViewModel()
     override func viewDidLoad() {
@@ -59,10 +68,23 @@ class ViewController: UIViewController {
         viewModel.output.bookList
             .bind { [weak self] list in
                 guard let self = self else { return }
-                self.dataSources = list ?? []
-                DispatchQueue.main.async( execute: {
-                    self.tbview.reloadData()
-                })
+                guard list?.count ?? 0 > 0 else { return }
+                
+                if self.pageNo == 0 {
+                    self.dataSources = list ?? []
+                    DispatchQueue.main.async {
+                        self.tbview.reloadData()
+                    }
+                } else {
+                    let pCnt = self.dataSources.count
+                    list?.forEach({ book in
+                        self.dataSources.append(book)
+                    })
+                    DispatchQueue.main.async {
+                        self.tbview.insertRows(pCnt, self.dataSources.count)
+                        self.spinner.stopAnimating()
+                    }
+                }
             }
         
         viewModel.output.errorMsg
@@ -92,7 +114,32 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
     }
+}
+
+extension ViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        print("scrollViewWillBeginDragging")
+        isDataLoading = false
+    }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print("scrollViewDidEndDecelerating")
+    }
+    
+    //Pagination
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        print("scrollViewDidEndDragging")
+        guard searchString.count > 0 else { return }
+        if ((tbview.contentOffset.y + tbview.frame.size.height) >= tbview.contentSize.height)
+        {
+            if !isDataLoading {
+                isDataLoading = true
+                pageNo += 1
+                spinner.startAnimating()
+                viewModel.input.getBookSearchList(bookName: searchString, page: pageNo)
+            }
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -105,6 +152,7 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("search 시작 ")
         guard let searchText = searchBar.text else { return }
+        self.searchString = searchText
         searchBar.resignFirstResponder()
         viewModel.input.getBookSearchList(bookName: searchText, page: 0)
     }
