@@ -9,42 +9,103 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let router = Router<BookSearchAPI>()
-
+    lazy var tbview: UITableView = {
+        let tbview = UITableView()
+        tbview.translatesAutoresizingMaskIntoConstraints = false
+        tbview.keyboardDismissMode = .onDrag
+        tbview.tableFooterView = UIView()
+        tbview.register(SearchBookTableViewCell.self, forCellReuseIdentifier: SearchBookTableViewCell.identifier)
+        tbview.frame = self.view.bounds
+        //tbview.separatorStyle = .none
+        tbview.translatesAutoresizingMaskIntoConstraints = false
+        tbview.estimatedRowHeight = 500
+        tbview.rowHeight = UITableView.automaticDimension
+        tbview.delegate = self
+        tbview.dataSource = self
+        return tbview
+    }()
+    
+    lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search"
+        searchBar.searchBarStyle = .minimal
+        searchBar.sizeToFit()
+        searchBar.delegate = self
+        return searchBar
+    }()
+    
+    var dataSources: [Book] = []
+    let viewModel: BookServiceViewModelType = BookServiceViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .red
-        getBookList()
-        getBookInfo()
+        view.backgroundColor = .white
+        setupView()
+        binding()
     }
     
-    func getBookList() {
-        router.request(.getBookSearchList(query: "Swift", page: 0), encodeType: BookSearch.self) { response, error in
-            if let error = error {
-                print(error)
-            } else {
-                if let response = response {
-                    let bookList = response as? BookSearch
-                    print(bookList)
-                }
+    private func setupView() {
+        navigationItem.titleView = searchBar
+        view.addSubview(tbview)
+        
+        let margins = view.layoutMarginsGuide
+        tbview.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
+        tbview.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+        tbview.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+        tbview.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
+    }
+    
+    private func binding() {
+        viewModel.output.bookList
+            .bind { [weak self] list in
+                guard let self = self else { return }
+                self.dataSources = list ?? []
+                DispatchQueue.main.async( execute: {
+                    self.tbview.reloadData()
+                })
             }
-        }
-    }
-    
-    func getBookInfo() {
-        router.request(.getBookDetailInfo(bookId: "9781617294136"), encodeType: BookInfo.self) { response, error in
-            if let error = error {
-                print(error)
-            } else {
-                if let response = response {
-                    let bookList = response as? BookInfo
-                    print(bookList)
-                }
+        
+        viewModel.output.errorMsg
+            .bind { [weak self] errMsg in
+                guard let self = self else { return }
+                self.showAlert(withTitle: "Error 발생", withMessage: errMsg)
             }
-        }
     }
     
-
 }
 
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchBookTableViewCell.identifier, for: indexPath) as? SearchBookTableViewCell else { return UITableViewCell() }
+        let book = dataSources[indexPath.row]
+        cell.configure(book: book)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let bookId = dataSources[indexPath.row].isbn13 else { return }
+        let childVC = DetailViewController(viewModel: viewModel)
+        childVC.configure(bookId: bookId)
+        self.navigationController?.pushViewController(childVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSources.count
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("search 시작 ")
+        guard let searchText = searchBar.text else { return }
+        searchBar.resignFirstResponder()
+        viewModel.input.getBookSearchList(bookName: searchText, page: 0)
+    }
+}

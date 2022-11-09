@@ -26,6 +26,12 @@
 		CE224760291A1D4B0087F563 /* bookSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22475F291A1D4B0087F563 /* bookSearchService.swift */; };
 		CE224762291A1D740087F563 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224761291A1D740087F563 /* Constant.swift */; };
 		CE224764291A2CA30087F563 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224763291A2CA20087F563 /* BookModel.swift */; };
+		CE224766291BB30A0087F563 /* BookServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224765291BB30A0087F563 /* BookServiceViewModel.swift */; };
+		CE224768291BB3220087F563 /* DynamicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224767291BB3220087F563 /* DynamicType.swift */; };
+		CE22476B291BB6C50087F563 /* SearchBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22476A291BB6C50087F563 /* SearchBookTableViewCell.swift */; };
+		CE22476D291BB7FE0087F563 /* UIImageVIew+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22476C291BB7FE0087F563 /* UIImageVIew+Extension.swift */; };
+		CE22476F291BC1F70087F563 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22476E291BC1F70087F563 /* UIViewController+Extension.swift */; };
+		CE224771291BC7CD0087F563 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224770291BC7CD0087F563 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +75,12 @@
 		CE22475F291A1D4B0087F563 /* bookSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookSearchService.swift; sourceTree = "<group>"; };
 		CE224761291A1D740087F563 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CE224763291A2CA20087F563 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		CE224765291BB30A0087F563 /* BookServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookServiceViewModel.swift; sourceTree = "<group>"; };
+		CE224767291BB3220087F563 /* DynamicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicType.swift; sourceTree = "<group>"; };
+		CE22476A291BB6C50087F563 /* SearchBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookTableViewCell.swift; sourceTree = "<group>"; };
+		CE22476C291BB7FE0087F563 /* UIImageVIew+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageVIew+Extension.swift"; sourceTree = "<group>"; };
+		CE22476E291BC1F70087F563 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		CE224770291BC7CD0087F563 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +171,9 @@
 		CE22472A2919F01E0087F563 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE224769291BB6AF0087F563 /* TableViewCell */,
 				CE2246FD2919DF830087F563 /* ViewController.swift */,
+				CE224770291BC7CD0087F563 /* DetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +181,7 @@
 		CE22472B2919F0250087F563 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CE224765291BB30A0087F563 /* BookServiceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -183,6 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				CE224761291A1D740087F563 /* Constant.swift */,
+				CE224767291BB3220087F563 /* DynamicType.swift */,
+				CE22476C291BB7FE0087F563 /* UIImageVIew+Extension.swift */,
+				CE22476E291BC1F70087F563 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -251,6 +269,14 @@
 				CE22475F291A1D4B0087F563 /* bookSearchService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		CE224769291BB6AF0087F563 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE22476A291BB6C50087F563 /* SearchBookTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,14 +412,20 @@
 				CE224758291A1D010087F563 /* HTTPUrlResponse.swift in Sources */,
 				CE22475A291A1D010087F563 /* NetworkRouter.swift in Sources */,
 				CE22475C291A1D010087F563 /* Router.swift in Sources */,
+				CE224768291BB3220087F563 /* DynamicType.swift in Sources */,
 				CE224759291A1D010087F563 /* NetworkError.swift in Sources */,
 				CE22475B291A1D010087F563 /* HTTPTask.swift in Sources */,
 				CE22475D291A1D010087F563 /* EndPointType.swift in Sources */,
+				CE224771291BC7CD0087F563 /* DetailViewController.swift in Sources */,
 				CE224764291A2CA30087F563 /* BookModel.swift in Sources */,
+				CE22476F291BC1F70087F563 /* UIViewController+Extension.swift in Sources */,
+				CE22476D291BB7FE0087F563 /* UIImageVIew+Extension.swift in Sources */,
 				CE224756291A1D010087F563 /* JSONParameterEncoder.swift in Sources */,
 				CE224757291A1D010087F563 /* AnyEncodable.swift in Sources */,
 				CE224760291A1D4B0087F563 /* bookSearchService.swift in Sources */,
 				CE224762291A1D740087F563 /* Constant.swift in Sources */,
+				CE22476B291BB6C50087F563 /* SearchBookTableViewCell.swift in Sources */,
+				CE224766291BB30A0087F563 /* BookServiceViewModel.swift in Sources */,
 				CE2246FE2919DF830087F563 /* ViewController.swift in Sources */,
 				CE2246FA2919DF830087F563 /* AppDelegate.swift in Sources */,
 				CE224755291A1D010087F563 /* URLParameterEncoder.swift in Sources */,

@@ -33,6 +33,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
                         
                         do {
                             let json = try JSONDecoder().decode(encodeType, from: responseData)
+                            
                             completion(json, nil)
                         } catch {
                             completion(nil, "decode error")
