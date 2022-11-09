@@ -60,14 +60,13 @@ class BookServiceViewModel: BookServiceViewModelInput, BookServiceViewModelOutpu
     }
     
     func getBookInfo(bookId: String) {
-        router.request(.getBookDetailInfo(bookId: bookId), encodeType: BookInfo.self) { [weak self] response, error in
+        router.request(.getBookDetailInfo(bookId: "9781617294136"), encodeType: BookInfo.self) { [weak self] response, error in
             guard let self = self else { return }
             if let error = error {
                 print(error)
             } else {
                 if let response = response {
                     if let bookInfo = response as? BookInfo {
-                        print("books : \(bookInfo)")
                         self.bookInfo.value = bookInfo
                     }
                 }

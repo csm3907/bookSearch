@@ -69,6 +69,7 @@ class ViewController: UIViewController {
             .bind { [weak self] list in
                 guard let self = self else { return }
                 guard list?.count ?? 0 > 0 else { return }
+                self.isDataLoading = false
                 
                 if self.pageNo == 0 {
                     self.dataSources = list ?? []
@@ -119,7 +120,7 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UIScrollViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         print("scrollViewWillBeginDragging")
-        isDataLoading = false
+        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

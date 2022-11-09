@@ -259,8 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				CE224751291A1D010087F563 /* NetworkRouter.swift */,
-				CE224752291A1D010087F563 /* HTTPTask.swift */,
 				CE224753291A1D010087F563 /* Router.swift */,
+				CE224752291A1D010087F563 /* HTTPTask.swift */,
 				CE224754291A1D010087F563 /* EndPointType.swift */,
 			);
 			path = Provider;

@@ -30,6 +30,8 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
                             completion(nil, message)
                             return
                         }
+                        let responseMessage = String(data: responseData, encoding: .utf8)
+                        print(responseMessage ?? "??")
                         
                         do {
                             let json = try JSONDecoder().decode(encodeType, from: responseData)

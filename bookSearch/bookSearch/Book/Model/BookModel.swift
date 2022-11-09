@@ -33,4 +33,9 @@ struct BookInfo: Codable {
 // MARK: - PDF
 struct PDF: Codable {
     let chapter2, chapter5: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case chapter2 = "Chapter 2",
+             chapter5 = "Chapter 5"
+    }
 }
