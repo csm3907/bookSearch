@@ -8,9 +8,10 @@
 import Foundation
 
 class Router<EndPoint: EndPointType>: NetworkRouter {
+    
     private var task: URLSessionTask?
     
-    func request(_ route: EndPoint, encodeType: Codable.Type, completion: @escaping NetworkRouterCompletion) {
+    func request<T>(_ route: EndPoint, Type: T.Type, completion: @escaping (T?, String?) -> ()) where T : Decodable, T : Encodable {
         let session = URLSession.shared
         
         do {
@@ -34,7 +35,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
                         print(responseMessage ?? "??")
                         
                         do {
-                            let json = try JSONDecoder().decode(encodeType, from: responseData)
+                            let json = try JSONDecoder().decode(T.self, from: responseData)
                             
                             completion(json, nil)
                         } catch {
@@ -51,7 +52,6 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         }
         
         self.task?.resume()
-        
     }
     
     func cancel() {

@@ -25,7 +25,7 @@ protocol BookServiceViewModelType {
 
 class BookServiceViewModel: BookServiceViewModelInput, BookServiceViewModelOutput, BookServiceViewModelType {
     
-    // MARK: - Input
+    // MARK: - TYPE
     
     var input: BookServiceViewModelInput { self }
     var output: BookServiceViewModelOutput { self }
@@ -40,36 +40,33 @@ class BookServiceViewModel: BookServiceViewModelInput, BookServiceViewModelOutpu
     
     private let router = Router<BookSearchAPI>()
     
+    // MARK: - Input
+    
     func getBookSearchList(bookName: String, page: Int = 0) {
-        router.request(.getBookSearchList(query: bookName, page: page), encodeType: BookSearch.self) { [weak self] response, error in
+        router.request(.getBookSearchList(query: bookName, page: page), Type: BookSearch.self) { [weak self] response, error in
             guard let self = self else { return }
             if let error = error {
-                print(error)
+                self.errorMsg.value = error
             } else {
-                if let response = response {
-                    if let bookList = response as? BookSearch {
-                        let books = bookList.books
-                        if books?.count == 0 {
-                            self.errorMsg.value = "검색 결과가 없습니다."
-                        }
-                        self.bookList.value = books
+                if let bookList = response {
+                    let books = bookList.books
+                    if books?.count == 0 {
+                        self.errorMsg.value = "검색 결과가 없습니다."
                     }
+                    self.bookList.value = books
                 }
             }
         }
     }
     
     func getBookInfo(bookId: String) { //"9781617294136"
-        router.request(.getBookDetailInfo(bookId: bookId), encodeType: BookInfo.self) { [weak self] response, error in
+        router.request(.getBookDetailInfo(bookId: bookId), Type: BookInfo.self) { [weak self] response, error in
             guard let self = self else { return }
-            print("book iD :\(bookId)")
             if let error = error {
-                print(error)
+                self.errorMsg.value = error
             } else {
-                if let response = response {
-                    if let bookInfo = response as? BookInfo {
-                        self.bookInfo.value = bookInfo
-                    }
+                if let bookInfo = response {
+                    self.bookInfo.value = bookInfo
                 }
             }
         }

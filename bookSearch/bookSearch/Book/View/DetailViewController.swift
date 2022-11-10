@@ -230,6 +230,8 @@ class DetailViewController: UIViewController {
                     self.view.layoutIfNeeded()
                 }
             }
+        
+        
     }
     
     func getImage(image: String?) {
