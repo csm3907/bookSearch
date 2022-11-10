@@ -117,18 +117,6 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    let pdfView: PDFView = {
-        let pdfView = PDFView()
-        pdfView.translatesAutoresizingMaskIntoConstraints = false
-        return pdfView
-    }()
-    
-    let chapter5PdfView: PDFView = {
-        let pdfView = PDFView()
-        pdfView.translatesAutoresizingMaskIntoConstraints = false
-        return pdfView
-    }()
-    
     var bookInfo: BookInfo? = nil
     var viewModel: BookServiceViewModelType
     init(viewModel: BookServiceViewModelType) {
@@ -163,8 +151,6 @@ class DetailViewController: UIViewController {
         stackView.addArrangedSubview(descriptionLbl)
         stackView.addArrangedSubview(priceLbl)
         stackView.addArrangedSubview(outLinkLbl)
-        stackView.addArrangedSubview(pdfView)
-        stackView.addArrangedSubview(chapter5PdfView)
         
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -176,12 +162,6 @@ class DetailViewController: UIViewController {
         NSLayoutConstraint.activate([
             imageView.heightAnchor.constraint(equalToConstant: 250),
             imageView.widthAnchor.constraint(equalToConstant: 250),
-            
-            pdfView.heightAnchor.constraint(equalToConstant: 250),
-            pdfView.widthAnchor.constraint(equalToConstant: 250),
-            
-            chapter5PdfView.heightAnchor.constraint(equalToConstant: 250),
-            chapter5PdfView.widthAnchor.constraint(equalToConstant: 250),
             
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
@@ -222,27 +202,26 @@ class DetailViewController: UIViewController {
                     self.priceLbl.text = "price : \(bookInfo?.price ?? "")"
                     self.outLinkLbl.text = "link : \(bookInfo?.url ?? "")"
                     
-                    if let chapter2 = bookInfo?.pdf?.chapter2 {
-                        DispatchQueue.global().async {
-                            if let url = URL(string: chapter2), let document = PDFDocument(url: url) {
-                                DispatchQueue.main.async {
-                                    self.pdfView.autoScales = true
-                                    self.pdfView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                                    self.pdfView.displayDirection = .horizontal
-                                    self.pdfView.document = document
-                                }
-                            }
-                        }
-                    }
-                    
-                    if let chapter5 = bookInfo?.pdf?.chapter5 {
-                        DispatchQueue.global().async {
-                            if let url = URL(string: chapter5), let document = PDFDocument(url: url) {
-                                DispatchQueue.main.async {
-                                    self.chapter5PdfView.autoScales = true
-                                    self.chapter5PdfView.displayMode = .singlePageContinuous
-                                    self.chapter5PdfView.displayDirection = .horizontal
-                                    self.chapter5PdfView.document = document
+                    if let pdfDictionary = bookInfo?.pdf {
+                        if pdfDictionary.count > 0 {
+                            for url in pdfDictionary.values {
+                                let pdfView = PDFView()
+                                pdfView.translatesAutoresizingMaskIntoConstraints = false
+                                self.stackView.addArrangedSubview(pdfView)
+                                NSLayoutConstraint.activate([
+                                    pdfView.heightAnchor.constraint(equalToConstant: 250),
+                                    pdfView.widthAnchor.constraint(equalToConstant: 250),
+                                ])
+                                
+                                DispatchQueue.global().async {
+                                    if let url = URL(string: url), let document = PDFDocument(url: url) {
+                                        DispatchQueue.main.async {
+                                            pdfView.autoScales = true
+                                            pdfView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                                            pdfView.displayDirection = .horizontal
+                                            pdfView.document = document
+                                        }
+                                    }
                                 }
                             }
                         }
