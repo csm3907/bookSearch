@@ -12,8 +12,6 @@
 		CE2247032919DF830087F563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2247022919DF830087F563 /* Assets.xcassets */; };
 		CE2247062919DF830087F563 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2247042919DF830087F563 /* LaunchScreen.storyboard */; };
 		CE2247112919DF830087F563 /* bookSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2247102919DF830087F563 /* bookSearchTests.swift */; };
-		CE22471B2919DF840087F563 /* bookSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22471A2919DF840087F563 /* bookSearchUITests.swift */; };
-		CE22471D2919DF840087F563 /* bookSearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22471C2919DF840087F563 /* bookSearchUITestsLaunchTests.swift */; };
 		CE224755291A1D010087F563 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474A291A1D010087F563 /* URLParameterEncoder.swift */; };
 		CE224756291A1D010087F563 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474B291A1D010087F563 /* JSONParameterEncoder.swift */; };
 		CE224757291A1D010087F563 /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474C291A1D010087F563 /* AnyEncodable.swift */; };
@@ -34,17 +32,34 @@
 		CE224771291BC7CD0087F563 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224770291BC7CD0087F563 /* DetailViewController.swift */; };
 		CE224773291BD4230087F563 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224772291BD4230087F563 /* UITableView+Extension.swift */; };
 		CE224775292087370087F563 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224774292087370087F563 /* ImageCache.swift */; };
+		CE2247772920B4D60087F563 /* BookSearchTestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2247762920B4D60087F563 /* BookSearchTestProvider.swift */; };
+		CE2247782920B5190087F563 /* bookSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22475F291A1D4B0087F563 /* bookSearchService.swift */; };
+		CE22477A2920B5650087F563 /* MockUrlSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2247792920B5650087F563 /* MockUrlSessionDataTask.swift */; };
+		CE22477C2920B5870087F563 /* TestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22477B2920B5870087F563 /* TestCases.swift */; };
+		CE22477D2920B5DE0087F563 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224761291A1D740087F563 /* Constant.swift */; };
+		CE22477E2920B8A90087F563 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224763291A2CA20087F563 /* BookModel.swift */; };
+		CE22477F2920BA710087F563 /* HTTPUrlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474E291A1D010087F563 /* HTTPUrlResponse.swift */; };
+		CE2247802920BA730087F563 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474F291A1D010087F563 /* NetworkError.swift */; };
+		CE2247812920BA770087F563 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224751291A1D010087F563 /* NetworkRouter.swift */; };
+		CE2247822920BA790087F563 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224753291A1D010087F563 /* Router.swift */; };
+		CE2247832920BA7B0087F563 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224752291A1D010087F563 /* HTTPTask.swift */; };
+		CE2247842920BA7D0087F563 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224754291A1D010087F563 /* EndPointType.swift */; };
+		CE2247852920BA910087F563 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474B291A1D010087F563 /* JSONParameterEncoder.swift */; };
+		CE2247862920BA970087F563 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474A291A1D010087F563 /* URLParameterEncoder.swift */; };
+		CE2247872920BA990087F563 /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22474C291A1D010087F563 /* AnyEncodable.swift */; };
+		CE2247882920BCD90087F563 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2246FD2919DF830087F563 /* ViewController.swift */; };
+		CE2247892920BCE00087F563 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224770291BC7CD0087F563 /* DetailViewController.swift */; };
+		CE22478A2920BF4E0087F563 /* SearchBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22476A291BB6C50087F563 /* SearchBookTableViewCell.swift */; };
+		CE22478B2920BF5B0087F563 /* UIImageVIew+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22476C291BB7FE0087F563 /* UIImageVIew+Extension.swift */; };
+		CE22478C2920BF670087F563 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224774292087370087F563 /* ImageCache.swift */; };
+		CE22478D2920BF810087F563 /* BookServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224765291BB30A0087F563 /* BookServiceViewModel.swift */; };
+		CE22478E2920BF890087F563 /* DynamicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224767291BB3220087F563 /* DynamicType.swift */; };
+		CE22478F2920BF940087F563 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22476E291BC1F70087F563 /* UIViewController+Extension.swift */; };
+		CE2247902920BFCD0087F563 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224772291BD4230087F563 /* UITableView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		CE22470D2919DF830087F563 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE2246EE2919DF830087F563 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE2246F52919DF830087F563;
-			remoteInfo = bookSearch;
-		};
-		CE2247172919DF840087F563 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE2246EE2919DF830087F563 /* Project object */;
 			proxyType = 1;
@@ -62,9 +77,6 @@
 		CE2247072919DF830087F563 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE22470C2919DF830087F563 /* bookSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bookSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2247102919DF830087F563 /* bookSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookSearchTests.swift; sourceTree = "<group>"; };
-		CE2247162919DF840087F563 /* bookSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bookSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE22471A2919DF840087F563 /* bookSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookSearchUITests.swift; sourceTree = "<group>"; };
-		CE22471C2919DF840087F563 /* bookSearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookSearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE22474A291A1D010087F563 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		CE22474B291A1D010087F563 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		CE22474C291A1D010087F563 /* AnyEncodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
@@ -85,6 +97,9 @@
 		CE224770291BC7CD0087F563 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CE224772291BD4230087F563 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		CE224774292087370087F563 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		CE2247762920B4D60087F563 /* BookSearchTestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchTestProvider.swift; sourceTree = "<group>"; };
+		CE2247792920B5650087F563 /* MockUrlSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlSessionDataTask.swift; sourceTree = "<group>"; };
+		CE22477B2920B5870087F563 /* TestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,13 +117,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE2247132919DF840087F563 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -117,7 +125,6 @@
 			children = (
 				CE2246F82919DF830087F563 /* bookSearch */,
 				CE22470F2919DF830087F563 /* bookSearchTests */,
-				CE2247192919DF840087F563 /* bookSearchUITests */,
 				CE2246F72919DF830087F563 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,7 +134,6 @@
 			children = (
 				CE2246F62919DF830087F563 /* bookSearch.app */,
 				CE22470C2919DF830087F563 /* bookSearchTests.xctest */,
-				CE2247162919DF840087F563 /* bookSearchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,17 +155,11 @@
 			isa = PBXGroup;
 			children = (
 				CE2247102919DF830087F563 /* bookSearchTests.swift */,
+				CE2247762920B4D60087F563 /* BookSearchTestProvider.swift */,
+				CE2247792920B5650087F563 /* MockUrlSessionDataTask.swift */,
+				CE22477B2920B5870087F563 /* TestCases.swift */,
 			);
 			path = bookSearchTests;
-			sourceTree = "<group>";
-		};
-		CE2247192919DF840087F563 /* bookSearchUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CE22471A2919DF840087F563 /* bookSearchUITests.swift */,
-				CE22471C2919DF840087F563 /* bookSearchUITestsLaunchTests.swift */,
-			);
-			path = bookSearchUITests;
 			sourceTree = "<group>";
 		};
 		CE2247292919F0130087F563 /* Book */ = {
@@ -323,24 +323,6 @@
 			productReference = CE22470C2919DF830087F563 /* bookSearchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CE2247152919DF840087F563 /* bookSearchUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CE2247262919DF840087F563 /* Build configuration list for PBXNativeTarget "bookSearchUITests" */;
-			buildPhases = (
-				CE2247122919DF840087F563 /* Sources */,
-				CE2247132919DF840087F563 /* Frameworks */,
-				CE2247142919DF840087F563 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CE2247182919DF840087F563 /* PBXTargetDependency */,
-			);
-			name = bookSearchUITests;
-			productName = bookSearchUITests;
-			productReference = CE2247162919DF840087F563 /* bookSearchUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -355,10 +337,6 @@
 						CreatedOnToolsVersion = 14.0.1;
 					};
 					CE22470B2919DF830087F563 = {
-						CreatedOnToolsVersion = 14.0.1;
-						TestTargetID = CE2246F52919DF830087F563;
-					};
-					CE2247152919DF840087F563 = {
 						CreatedOnToolsVersion = 14.0.1;
 						TestTargetID = CE2246F52919DF830087F563;
 					};
@@ -379,7 +357,6 @@
 			targets = (
 				CE2246F52919DF830087F563 /* bookSearch */,
 				CE22470B2919DF830087F563 /* bookSearchTests */,
-				CE2247152919DF840087F563 /* bookSearchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -395,13 +372,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CE22470A2919DF830087F563 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE2247142919DF840087F563 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -444,16 +414,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE22478F2920BF940087F563 /* UIViewController+Extension.swift in Sources */,
+				CE2247832920BA7B0087F563 /* HTTPTask.swift in Sources */,
+				CE2247822920BA790087F563 /* Router.swift in Sources */,
+				CE22478A2920BF4E0087F563 /* SearchBookTableViewCell.swift in Sources */,
+				CE2247872920BA990087F563 /* AnyEncodable.swift in Sources */,
+				CE2247842920BA7D0087F563 /* EndPointType.swift in Sources */,
+				CE22478E2920BF890087F563 /* DynamicType.swift in Sources */,
 				CE2247112919DF830087F563 /* bookSearchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE2247122919DF840087F563 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE22471B2919DF840087F563 /* bookSearchUITests.swift in Sources */,
-				CE22471D2919DF840087F563 /* bookSearchUITestsLaunchTests.swift in Sources */,
+				CE22477C2920B5870087F563 /* TestCases.swift in Sources */,
+				CE22477F2920BA710087F563 /* HTTPUrlResponse.swift in Sources */,
+				CE22477A2920B5650087F563 /* MockUrlSessionDataTask.swift in Sources */,
+				CE2247772920B4D60087F563 /* BookSearchTestProvider.swift in Sources */,
+				CE2247892920BCE00087F563 /* DetailViewController.swift in Sources */,
+				CE2247882920BCD90087F563 /* ViewController.swift in Sources */,
+				CE22478C2920BF670087F563 /* ImageCache.swift in Sources */,
+				CE2247862920BA970087F563 /* URLParameterEncoder.swift in Sources */,
+				CE2247782920B5190087F563 /* bookSearchService.swift in Sources */,
+				CE2247902920BFCD0087F563 /* UITableView+Extension.swift in Sources */,
+				CE2247802920BA730087F563 /* NetworkError.swift in Sources */,
+				CE2247812920BA770087F563 /* NetworkRouter.swift in Sources */,
+				CE22478D2920BF810087F563 /* BookServiceViewModel.swift in Sources */,
+				CE22477D2920B5DE0087F563 /* Constant.swift in Sources */,
+				CE2247852920BA910087F563 /* JSONParameterEncoder.swift in Sources */,
+				CE22478B2920BF5B0087F563 /* UIImageVIew+Extension.swift in Sources */,
+				CE22477E2920B8A90087F563 /* BookModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,11 +449,6 @@
 			isa = PBXTargetDependency;
 			target = CE2246F52919DF830087F563 /* bookSearch */;
 			targetProxy = CE22470D2919DF830087F563 /* PBXContainerItemProxy */;
-		};
-		CE2247182919DF840087F563 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE2246F52919DF830087F563 /* bookSearch */;
-			targetProxy = CE2247172919DF840087F563 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -694,42 +674,6 @@
 			};
 			name = Release;
 		};
-		CE2247272919DF840087F563 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DXQ87QDB5J;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.choi.bookSearchUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = bookSearch;
-			};
-			name = Debug;
-		};
-		CE2247282919DF840087F563 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DXQ87QDB5J;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.choi.bookSearchUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = bookSearch;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -756,15 +700,6 @@
 			buildConfigurations = (
 				CE2247242919DF840087F563 /* Debug */,
 				CE2247252919DF840087F563 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CE2247262919DF840087F563 /* Build configuration list for PBXNativeTarget "bookSearchUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CE2247272919DF840087F563 /* Debug */,
-				CE2247282919DF840087F563 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

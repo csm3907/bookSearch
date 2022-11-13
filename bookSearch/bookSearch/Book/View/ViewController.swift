@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         tbview.tableFooterView = spinner
         tbview.register(SearchBookTableViewCell.self, forCellReuseIdentifier: SearchBookTableViewCell.identifier)
         tbview.frame = self.view.bounds
-        //tbview.separatorStyle = .none
         tbview.translatesAutoresizingMaskIntoConstraints = false
         tbview.estimatedRowHeight = 500
         tbview.rowHeight = UITableView.automaticDimension
