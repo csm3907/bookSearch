@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     
     var searchString: String = ""
     var isDataLoading: Bool = false
-    var pageNo:Int = 0
+    var pageNo: Int = 1
     var dataSources: [Book] = []
     let viewModel: BookServiceViewModelType = BookServiceViewModel()
     override func viewDidLoad() {
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
                 guard list?.count ?? 0 > 0 else { return }
                 self.isDataLoading = false
                 
-                if self.pageNo == 0 {
+                if self.pageNo == 1 {
                     self.dataSources = list ?? []
                     DispatchQueue.main.async {
                         self.tbview.reloadData()
@@ -118,20 +118,10 @@ extension ViewController: UITableViewDelegate {
 }
 
 extension ViewController: UIScrollViewDelegate {
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        print("scrollViewWillBeginDragging")
-        
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print("scrollViewDidEndDecelerating")
-    }
-    
     //Pagination
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        print("scrollViewDidEndDragging")
         guard searchString.count > 0 else { return }
-        if ((tbview.contentOffset.y + tbview.frame.size.height) >= tbview.contentSize.height)
+        if ((tbview.contentOffset.y + tbview.frame.size.height) >= tbview.contentSize.height - 100)
         {
             if !isDataLoading {
                 isDataLoading = true
@@ -151,10 +141,11 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("search 시작 ")
         guard let searchText = searchBar.text else { return }
         self.searchString = searchText
+        self.pageNo = 1
+        self.dataSources = []
         searchBar.resignFirstResponder()
-        viewModel.input.getBookSearchList(bookName: searchText, page: 0)
+        viewModel.input.getBookSearchList(bookName: searchText, page: pageNo)
     }
 }

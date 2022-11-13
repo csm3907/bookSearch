@@ -16,6 +16,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         
         do {
             let request = try self.buildRequest(from: route)
+            print("request url is :\(request.url)")
             task = session.dataTask(with: request, completionHandler: { data, response, error in
                 if error != nil {
                     completion(nil, error?.localizedDescription)

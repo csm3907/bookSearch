@@ -9,14 +9,23 @@ import UIKit
 
 extension UIImageView {
     func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
+        if let cachedImage = ImageCache.instance.image(for: url) {
+            DispatchQueue.main.async {
+                self.image = cachedImage
+            }
+            return
+        }
+        
+        DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
+                    ImageCache.instance.insertImage(image, for: url)
                     DispatchQueue.main.async {
-                        self?.image = image
+                        self.image = image
                     }
                 }
             }
         }
     }
+    
 }

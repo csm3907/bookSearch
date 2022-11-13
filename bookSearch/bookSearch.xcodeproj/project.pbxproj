@@ -33,6 +33,7 @@
 		CE22476F291BC1F70087F563 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22476E291BC1F70087F563 /* UIViewController+Extension.swift */; };
 		CE224771291BC7CD0087F563 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224770291BC7CD0087F563 /* DetailViewController.swift */; };
 		CE224773291BD4230087F563 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224772291BD4230087F563 /* UITableView+Extension.swift */; };
+		CE224775292087370087F563 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE224774292087370087F563 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		CE22476E291BC1F70087F563 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		CE224770291BC7CD0087F563 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CE224772291BD4230087F563 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		CE224774292087370087F563 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 				CE22476C291BB7FE0087F563 /* UIImageVIew+Extension.swift */,
 				CE22476E291BC1F70087F563 /* UIViewController+Extension.swift */,
 				CE224772291BD4230087F563 /* UITableView+Extension.swift */,
+				CE224774292087370087F563 /* ImageCache.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE224775292087370087F563 /* ImageCache.swift in Sources */,
 				CE224758291A1D010087F563 /* HTTPUrlResponse.swift in Sources */,
 				CE22475A291A1D010087F563 /* NetworkRouter.swift in Sources */,
 				CE224773291BD4230087F563 /* UITableView+Extension.swift in Sources */,

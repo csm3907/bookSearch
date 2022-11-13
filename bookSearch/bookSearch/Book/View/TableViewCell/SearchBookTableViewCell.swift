@@ -119,5 +119,11 @@ class SearchBookTableViewCell: UITableViewCell {
         ])
         layoutIfNeeded()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.imgView.image = nil
+    }
 
 }
